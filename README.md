@@ -1,4 +1,4 @@
-Code &amp; Notes about CS193p iOS8
+Code &amp; Notes about CS193P iOS8
 =====
 
-[Lession 1](/Lesson1.md)
+[Lecture 1](/Lecture1.md)

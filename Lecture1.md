@@ -13,7 +13,6 @@ Auto Layout
 * 开启Xcode的Assistant Editor视图保证storyboard和controller的代码同时显示。
 * Ctrl+拖动将Label控件拖动至controller中，可以在弹出框中设置连接方式、变量名、变量类型等，然后Xcode会自动生成一个属性（实例变量）。
 * Outlet连接方式表明这是一个指向UI控件的指针变量，指针不需要类似`&`或`*`等前缀。
-* `: UILable`表明变量的类型。
 * Action连接方式用于创建一个方法响应控件的事件，可以设置方法名、事件、参数等。
 
 Xcode操作
