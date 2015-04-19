@@ -79,7 +79,7 @@ MVC
 * Model：程序是干嘛的，比如计算机的核心是数字计算，这块逻辑应该放在Model里，Model与UI是完全独立的。
 * Controller：控制Model是如何在UI上进行显示的，即显示相关的逻辑。
 * View：通用的UI控件，这些控件具体的作用要靠Controller来决定，因此View被成为Controller的奴隶（minions）。
-![](/imgs/MVC.png)
+![](/Notes/imgs/MVC.png)
 * 三者之间的通信如上图：
     * 用交通标线来表示，双黄色表示禁止通信，白色虚线表示可以通信。
     * Controller -> Model 通信，Controller必须完全的调用Model的开放API。
