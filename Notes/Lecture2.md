@@ -54,7 +54,8 @@ performOperation({ (opt1: Double, opt2: Double) -> Double in
 * 如果函数参数是这个最后一个参数的话，则调用的时候可以直接将这个函数写在外面，如`performOperation() { $0 * $1 }`。
 * 如果函数参数是唯一的一个参数，则调用时的括号也可以省略，如`performOperation { $0 * $1 }`。
 * 函数的重载：名字相同，参数不同。
-> 视频中得重载方法在Xcode 6.3中会报错，这是因为ViewController继承于UIViewController，而这是一个objc的类，所以两个方法的selector必须不同才行，而视频中的两个方法的selector均为`performOperation(operation:)`，故报错。[来源](http://stackoverflow.com/questions/29457720/swift-compiler-error-which-i-dont-understand)
+
+>视频中得重载方法在Xcode 6.3中会报错，这是因为ViewController继承于UIViewController，而这是一个objc的类，所以两个方法的selector必须不同才行，而视频中的两个方法的selector均为`performOperation(operation:)`，故报错。[来源](http://stackoverflow.com/questions/29457720/swift-compiler-error-which-i-dont-understand)
 
 Xcode
 ------
