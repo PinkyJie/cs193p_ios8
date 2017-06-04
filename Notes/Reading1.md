@@ -3,13 +3,13 @@ The Swift Programing Language 阅读笔记1
 * 多行注释`/* */`可以嵌套。
 * `nil`不可以被赋给非可选类型的变量或常量。
 
-###元组
+### 元组
 * 元组的分解：`let (a, b) = tuple`，注意这里的括号。
 * 元组分解时使用`_`忽略某个值。
 * 元组可以使用类似`a.0`的下标语法来访问其元素。
 * 定义元组时可以给其元素命名，如`let a = (aaa: 200, bbb: "OK")`，命名后可以使用类似`a.aaa`的语法访问其元素。
 
-###可选绑定
+### 可选绑定
 * 可选绑定可用于`if`或`while`语句，如果可选类型有值返回，则为真，并且可选变量在引用时不需要被强制解析。如：
 ```
 if let actualNumber = possibleNumber.toInt() {
@@ -19,17 +19,17 @@ if let actualNumber = possibleNumber.toInt() {
 }
 ```
 
-###隐式解析可选类型
+### 隐式解析可选类型
 * 有些情况下，一个可选类型的变量在首次被赋值后可以确定其以后总是有值的。为了方便以后引用变量时不需要每次都使用强制解析`!`，可以在声明这个变量时将其类型声明为`String!`。原本的`?`变成了`!`，但其仍然是可选类型，outlet类型的变量就是一个很好地例子。
 
-###运算符
+### 运算符
 * 赋值运算符`=`不返回值，防止在`if`语句判断是错将`==`写成`=`。
 * 加减乘除默认会检查结果是否溢出。
 * 求余运算符`%`：`9 % 4` => `9 = (2 x 4) + 1`，该运算符同样可以用于浮点数。
 * 空合运算符`??`：`a ?? b` => `a != nil ? a! : b`，其中a的类型必须是可选类型，b的类型必须于a有值时的类型一致。
 * 区间运算符：`a...b`代表同时包含a和b的区间，`a..<b`代表不包含b的区间，常用于循环。
 
-###字符串
+### 字符串
 * String类型与NSString类型是对等的。
 * String类型在参数传递时使用值传递，即传进函数中的变量不会被更改。
 * 全局函数`countElements`可返回字符串的长度。
@@ -39,7 +39,7 @@ if let actualNumber = possibleNumber.toInt() {
     * 通过`.utf16`返回UTF-16表示，每一个都是UInt16类型
     * 通过`.unicodeScalars`返回Unicode标量表示，每一个都是UInt32类型
 
-###数组
+### 数组
 * 只能存储同一类型的元素，与NSArray不同。
 * 数组的类型一般使用`Array<Type>`来声明，也可以直接用简短的`[Type]`来声明。
 * 使用下标使可以使用上面的区间运算符，如`a[4...6]`，使用区间运算符在左侧时，右侧的数量可以比左侧少，如`a[4...6] = [1]`，这样就会使数组的元素个数减少为4个。
@@ -52,7 +52,7 @@ if let actualNumber = possibleNumber.toInt() {
 * 遍历：`for x in arr`或`for (idx, val) in enumerate(arr)`
 * 创建空数组：`[Int]()`或可推导类型的情况下直接使用`[]`。
 
-###字典
+### 字典
 * 同样Key和Value的类型是确定的。
 * 声明：`Dictionary<KeyType, ValueType>`或`[KeyType:ValueType]`。
 * 注意，字典同样使用`[]`，而不是其他语言的`{}`。
@@ -61,7 +61,7 @@ if let actualNumber = possibleNumber.toInt() {
 * 方法`removeValueForKey`，移除某个键值对，同样返回值为可选的，返回删除前的值。
 * 创建空字典：`Dictionary<KeyType, ValueType>()`或可推导类型的情况下直接使用`[:]`。
 
-###控制流
+### 控制流
 * `for x in arr`循环中的x不需要手动声明，但其声明周期只在循环体中有效。
 * 如果不关心循环变量本身，可以使用`_`。
 * switch不需要使用break，但可以使用break显式的表明忽略某个case分支，匹配到break的分支会直接结束switch。
@@ -75,7 +75,7 @@ if let actualNumber = possibleNumber.toInt() {
     * 使用where做条件匹配：如`case let (x, y) where x == y`。
 * 循环前面可以使用标签，如`aaa: while xxx`，这样在多层的循环中可以显式的指明break要退出哪个循环，如`break aaa`。
 
-###函数
+### 函数
 * 每个函数都有一种类型，包括参数类型和返回值类型。
 * 函数声明：`func functionName(paramName: Type) -> returnType {}`。
 * 没有返回值的函数会返回`Void`，它实际上是空元组，即`()`。
@@ -88,7 +88,7 @@ if let actualNumber = possibleNumber.toInt() {
 * 在参数前面加上`inout`则这个参数就相当于引用传递了，在函数体中的变化将影响函数体外的变量。在调用时需要在实参前加`&`，表明是引用传递。
 * 嵌套函数：定义在其他函数中的函数，对外不可见，仅可被包含其的函数（enclosing function）所调用或返回。
 
-###闭包
+### 闭包
 * 函数作为参数传递（闭包）时的其简写过程：
     * 完整语法： 
     ```
